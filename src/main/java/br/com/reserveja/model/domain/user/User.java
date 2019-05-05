@@ -1,5 +1,6 @@
 package br.com.reserveja.model.domain.user;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,10 +10,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Null;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -21,7 +21,12 @@ import br.com.reserveja.model.domain.pessoa.Pessoa;
 
 @Entity
 @Table(name="tb_user")
-public class User {
+public class User implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8065611406436041007L;
 
 	@Id
 	@GenericGenerator(name="userIncrement" , strategy="increment")
@@ -41,6 +46,7 @@ public class User {
 	@ElementCollection(fetch = FetchType.EAGER)
 	List<Role> roles;
 	
+	@Transient
 	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="pessoa_id", nullable=true)
 	private Pessoa pessoa;

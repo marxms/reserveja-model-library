@@ -26,7 +26,6 @@ import br.com.reserveja.model.domain.user.User;
 @Entity
 public class Pessoa implements Serializable{
 
-//	private FieldHandler fieldHandler;
 	
 	/**
 	 * 
@@ -134,17 +133,4 @@ public class Pessoa implements Serializable{
 		this.user = user;
 	}
 	
-
-/*	@Override
-	public void setFieldHandler(FieldHandler handler) {
-		this.fieldHandler = handler;
-		
-	}
-
-	@Override
-	public FieldHandler getFieldHandler() {
-		// TODO Auto-generated method stub
-		return this.fieldHandler;
-	}
-*/
 }

@@ -1,5 +1,7 @@
 package br.com.reserveja.model.domain.telefone;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -22,8 +24,13 @@ import br.com.reserveja.model.domain.pessoa.Pessoa;
 	    name = "pgsql_enum",
 	    typeClass = PostgreSQLEnumType.class
 	)
-public class Telefone {
+public class Telefone implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4780100453337281778L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;

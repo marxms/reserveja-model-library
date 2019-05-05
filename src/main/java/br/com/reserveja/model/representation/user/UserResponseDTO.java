@@ -2,6 +2,8 @@ package br.com.reserveja.model.representation.user;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import br.com.reserveja.model.domain.user.Role;
 import br.com.reserveja.model.representation.pessoa.PessoaRepresentation;
 import io.swagger.annotations.ApiModelProperty;
