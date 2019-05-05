@@ -38,7 +38,7 @@ public class PessoaRepresentation{
 	@JsonProperty(required = false, value="sexo")
 	private String sexo;
 	
-	@JsonProperty(access=Access.WRITE_ONLY, value="user")
+	@JsonProperty(value="user")
 	private UserResponseDTO user;
 
 
